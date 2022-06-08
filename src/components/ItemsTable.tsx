@@ -24,6 +24,12 @@ const columns: GridColDef[] = [
         width: 110,
     },
     {
+        field: 'popularity',
+        headerName: 'Popularity',
+        type: 'number',
+        width: 110,
+    },
+    {
         field: 'url1',
         headerName: 'Steam Link',
         sortable: false,
