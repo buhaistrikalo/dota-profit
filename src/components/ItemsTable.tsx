@@ -5,7 +5,7 @@ import { Link, IconButton } from '@mui/material';
 import LinkIcon from '@mui/icons-material/Link';
 
 const columns: GridColDef[] = [
-    { field: 'id', headerName: 'ID', width: 90 },
+    // { field: 'id', headerName: 'ID', width: 90 },
     {
         field: 'name',
         headerName: 'Name',

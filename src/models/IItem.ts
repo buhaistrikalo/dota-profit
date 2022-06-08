@@ -1,5 +1,5 @@
 export interface IItem {
-    id: number;
+    _id: object;
     name: string;
     stonk: number;
     popularity: number;
