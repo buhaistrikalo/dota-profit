@@ -1,6 +1,12 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/dist/query/react';
 import { IItem } from '../models/IItem';
 
+let headers = new Headers();
+
+headers.append('Content-Type', 'application/json');
+headers.append('Accept', 'application/json');
+headers.append('Origin', process.env.REACT_APP_API_URL || '');
+
 export const itemAPI = createApi({
     reducerPath: 'itemAPI',
     baseQuery: fetchBaseQuery({ baseUrl: process.env.REACT_APP_API_URL }),
@@ -8,7 +14,9 @@ export const itemAPI = createApi({
     endpoints: (build) => ({
         fetchAllItems: build.query<IItem[], any>({
             query: () => ({
-                url: '/items',
+                url: '/items?format=json',
+                headers: headers,
+                method: 'GET',
             }),
             providesTags: (result) => ['Item'],
         }),
