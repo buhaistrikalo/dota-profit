@@ -9,6 +9,9 @@ export const itemAPI = createApi({
         fetchAllItems: build.query<IItem[], any>({
             query: () => ({
                 url: '/items',
+                headers: {
+                    'Access-Control-Allow-Origin': '*',
+                },
                 method: 'GET',
             }),
             providesTags: (result) => ['Item'],
