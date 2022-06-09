@@ -9,7 +9,7 @@ const columns: GridColDef[] = [
     {
         field: 'name',
         headerName: 'Name',
-        width: 150,
+        width: 300,
     },
     {
         field: 'stonk',
@@ -31,12 +31,12 @@ const columns: GridColDef[] = [
     },
     {
         field: 'url1',
-        headerName: 'Steam Link',
+        headerName: 'Market Link',
         sortable: false,
         width: 160,
         renderCell: (params) => (
-            <Link href={params.formattedValue}>
-                <IconButton aria-label="steam">
+            <Link target="_blank" href={params.formattedValue}>
+                <IconButton aria-label="market">
                     <LinkIcon />
                 </IconButton>
             </Link>
@@ -44,12 +44,12 @@ const columns: GridColDef[] = [
     },
     {
         field: 'url2',
-        headerName: 'Market Link',
+        headerName: 'Steam Link',
         sortable: false,
         width: 160,
         renderCell: (params) => (
-            <Link href={params.formattedValue}>
-                <IconButton aria-label="market">
+            <Link target="_blank" href={params.formattedValue}>
+                <IconButton aria-label="steam">
                     <LinkIcon />
                 </IconButton>
             </Link>
@@ -69,7 +69,6 @@ const ItemsTable: FC<ItemsTableProps> = ({ items }) => {
                 columns={columns}
                 pageSize={10}
                 rowsPerPageOptions={[5]}
-                checkboxSelection
                 disableSelectionOnClick
             />
         </div>
